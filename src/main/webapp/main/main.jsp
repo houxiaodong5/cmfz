@@ -27,7 +27,7 @@
                     var c="";
                     //二级类别
                     $.each(first.children,function(index2,sec){
-                       console.log(sec.href);
+                      // console.log(sec.href);
                         c += "<p style='text-align: center'><a href='#' onclick=\"addTabs('" + sec.title + "','" + sec.url + "','" + sec.iconCls + "')\" class='easyui-linkbutton' data-options=\"iconCls:'icon-search'\">" + sec.title + "</a></p>";
                     });
                     //一级类别加accordion

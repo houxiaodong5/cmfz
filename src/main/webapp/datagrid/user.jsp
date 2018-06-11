@@ -44,13 +44,13 @@
             toolbar: toolbar,
             view: detailview,
             detailFormatter: function (rowIndex, rowData) {
-                return '<table><tr>' +
+               /* return '<table><tr>' +
                     ' <td rowspan=2 style="border:0"><img src="' + rowData.imgPath + '" style="height:50px;"></td>' +
                     '<td style="border:0">' +
                     '<p>描述: ' + rowData.des + '</p>' +
                     '<p>状态: ' + rowData.status + '</p>' +
                     '</td>' +
-                    '</tr></table>';
+                    '</tr></table>';*/
             }
         })
     })

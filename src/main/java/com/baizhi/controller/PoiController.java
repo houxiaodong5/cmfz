@@ -119,15 +119,11 @@ public class PoiController {    //要导出的字段   对应的属性名    导
             for (int i=1;i<=sheet.getLastRowNum();i++){
                 user=new User();
                 row=sheet.getRow(i);
-               // user.setId(Integer.valueOf(row.getCell(0).getStringCellValue()));
                 System.out.println(row.getCell(1).getStringCellValue());
                 String s=row.getCell(1).getStringCellValue();
                 user.setPhoneNum(row.getCell(1).getStringCellValue());
                 user.setUsername(row.getCell(2).getStringCellValue());
                 user.setPassword(row.getCell(3).getStringCellValue());
-            /*    if(row.getCell(4)!=null){
-                    user.setSalt(row.getCell(4).getStringCellValue());
-                }*/
                 user.setDharmaName(row.getCell(5).getStringCellValue());
                 user.setProvince(row.getCell(6).getStringCellValue());
                 user.setCity(row.getCell(7).getStringCellValue());
@@ -136,11 +132,6 @@ public class PoiController {    //要导出的字段   对应的属性名    导
                 user.setSign(row.getCell(10).getStringCellValue());
                 user.setStatus(row.getCell(11).getStringCellValue());
                 user.setRegDate(row.getCell(12).getDateCellValue());
-/*                if(row.getCell(i).getDateCellValue()!=null){
-                    user.setRegDate(row.getCell(i).getDateCellValue());
-                    System.out.println(user.getRegDate());
-                }*/
-              //  System.out.println(row.getCell(i).getNumericCellValue());
                 list.add(user);
             }
         } catch (Exception e) {
