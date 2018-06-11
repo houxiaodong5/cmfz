@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "轮播图管理",
+    "iconCls": "icon-add",
+    "href": "",
+    "children": [
+      {
+        "id": 2,
+        "title": "轮播图1",
+        "iconCls": "icon-add",
+        "href": "/datagrid/banner.jsp"
+      },
+      {
+        "id": 3,
+        "title": "专辑管理",
+        "iconCls": "icon-add",
+        "href": "/datagrid/album.jsp"
+      }
+    ]
+  }
+]

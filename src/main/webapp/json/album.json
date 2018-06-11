@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "甘露明珠",
+    "count": "3",
+    "createDate": "这是时间",
+    "score": "这是分数",
+    "author": "这是名字",
+    "broadCast": "这是播音",
+    "brief": "我是专辑",
+    "img": "http://localhost:9002/cmfz/img/captcha.jpg",
+    "children": [
+      {
+        "id": 2,
+        "name": "甘露明珠1.mp3",
+        "size": "120 MB",
+        "url": "/audio/b0879e48-fb84-4e93-b0e2-faaaee297f9f.mp3",
+        "time": "20分钟"
+      },
+      {
+        "id": 3,
+        "name": "甘露明珠3",
+        "size": "120 MB",
+        "url": "/audio/b0879e48-fb84-4e93-b0e2-faaaee297f9f.mp3",
+        "time": "20分钟"
+      }
+    ]
+  }
+]

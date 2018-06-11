@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.dao.UserDAO">
+    <select id="queryAll" resultType="User" >
+      SELECT id,phoneNum,username,password,salt,dharmaName,province,city,sex,sign,headPlc,status,regDate
+      from user
+    </select>
+
+    <insert id="insertAll">
+      insert into user(phoneNum,username,password,dharmaName,province,city)
+      values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.phoneNum},#{item.username},#{item.password},#{item.dharmaName},#{item.province},#{item.city})
+        </foreach>
+    </insert>
+    <select id="queryByPhone" parameterType="java.lang.String" resultType="User">
+        select id,phoneNum,username,password,dharmaName,province,city,sex,sign,headPlc
+        from user
+        where phoneNum=#{phone}
+    </select>
+    <select id="queryById" parameterType="java.lang.Integer" resultType="User">
+        select id,phoneNum,username,password,dharmaName,province,city,sex,sign,headPlc
+        from user
+        where id=#{id}
+    </select>
+    <insert id="insert" parameterType="User">
+        insert into user(phoneNum,password,salt,regDate)
+        values(#{phoneNum},#{password},#{salt},#{regDate})
+
+    </insert>
+    <update id="update"  parameterType="User"  >
+      update user
+      <set>
+          <if test="username!=null">username=#{username},</if>
+          <if test="headPlc!=null">headPlc=#{headPlc},</if>
+          <if test="sign!=null">sign=#{sign},</if>
+          <if test="sex!=null">sex=#{sex},</if>
+          <if test="province!=null">province=#{province,</if>
+          <if test="city!=null">city=#{city},</if>
+          <if test="password!=null">password=#{password}</if>
+      </set>
+      where id=#{id}
+    </update>
+
+    <select id="queryNotId" parameterType="java.lang.Integer" resultType="User">
+        select dharmaName,username,sex,headPlc,province,city,sign,phoneNum
+        from user
+        where id not in (#{id})
+    </select>
+    <select id="querySalt" parameterType="java.lang.String" resultType="java.lang.String">
+        select salt
+        from user
+        where phoneNum=#{phone}
+    </select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

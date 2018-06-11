@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.dao.MenuDAO">
+    <insert id="insert" parameterType="Menu">
+        insert into menu(title,iconCls,parent_id,url)
+        values(#{title},#{iconCls},#{parent_id},#{url})
+    </insert>
+    <resultMap id="all" type="Menu">
+        <id column="p_id" property="id"/>
+        <result column="p_title" property="title"/>
+        <result column="p_iconCls" property="iconCls"/>
+        <result column="p_url" property="url"/>
+        <collection property="children" ofType="Menu">
+            <id column="sid" property="id"/>
+            <result column="s_title" property="title"/>
+            <result column="s_iconCls" property="iconCls"/>
+            <result column="s_url" property="url"/>
+        </collection>
+    </resultMap>
+    <select id="queryAll" resultMap="all">
+        select p.id p_id,p.title p_title,p.iconCls p_iconCls,p.parent_id p_parent_id,p.url p_url,
+               s.id sid,s.title s_title,s.title s_title,s.iconCls s_iconCls,s.parent_id s_parent_id,s.url s_url
+        from menu p
+         left join menu s
+         on p.id=s.parent_id
+         where p.parent_id is null
+
+
+    </select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

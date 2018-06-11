@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.dao.AlbumDAO">
+    <insert id="insert" parameterType="Album">
+        insert into album(title,coverImg,a_count,score,author,reciter,brief,publishDate)
+        values(#{title},#{coverImg},#{a_count},#{score},#{author},#{reciter},#{brief},#{publishDate})
+    </insert>
+    <select id="queryAll" resultType="Album">
+        SELECT  id,title,coverImg,a_count,score,author,reciter,brief,publishDate
+        from album
+    </select>
+    <select id="queryById" parameterType="java.lang.Integer" resultType="Album">
+        select id,title,coverImg,a_count,score,author,reciter,brief,publishDate
+        from album
+        where id=#{id}
+    </select>
+    <!--
+        <delete id="delete" parameterType="java.lang.Integer">
+            delete from rotationchart
+            where id=#{id}
+
+        </delete>
+        <update id="update" parameterType="RotationChart">
+            update rotationchart set status=#{status}
+            where id=#{id}
+        </update>-->
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
